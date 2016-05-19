@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  traveltime: 1.5
+  carid: one
+  slotsremaining: 1
+  locationfromid: one
+  locationtoid: one
+  description: MyString
+
+two:
+  traveltime: 1.5
+  carid: two
+  slotsremaining: 1
+  locationfromid: two
+  locationtoid: two
+  description: MyString
