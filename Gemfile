@@ -30,6 +30,13 @@ gem 'jbuilder', '~> 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Use Devise for user authentication
+gem 'devise'
+# Use Omniauth for user authentication
+gem 'omniauth'
+# Use Devise Token for user authentication
+gem 'devise_token_auth'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
