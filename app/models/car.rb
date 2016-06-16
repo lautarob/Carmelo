@@ -1,4 +1,4 @@
 class Car < ApplicationRecord
-  has_and_belongs_to_many :users
-  has_and_belongs_to_many :travels
+  belongs_to :user
+  has_many :travels
 end

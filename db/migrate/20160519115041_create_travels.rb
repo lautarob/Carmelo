@@ -11,6 +11,7 @@ class CreateTravels < ActiveRecord::Migration[5.0]
       t.string :city_destination
       t.string :province_destination
       t.string :country_destination
+      t.belongs_to :car, null: false
 
       t.timestamps
     end

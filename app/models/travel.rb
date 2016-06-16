@@ -1,3 +1,5 @@
 class Travel < ApplicationRecord
-  has_and_belongs_to_many :cars
+  belongs_to :car
+  has_many :conversations
+  has_many :users
 end

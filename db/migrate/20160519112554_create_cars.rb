@@ -6,6 +6,7 @@ class CreateCars < ActiveRecord::Migration[5.0]
       t.integer :slots
       t.string :register
       t.string :picture
+      t.belongs_to :user, index: true, null: false
 
       t.timestamps
     end

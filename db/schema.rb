@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160613193106) do
+ActiveRecord::Schema.define(version: 20160616184347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,26 +22,18 @@ ActiveRecord::Schema.define(version: 20160613193106) do
     t.integer  "slots"
     t.string   "register"
     t.string   "picture"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "cars_travels", id: false, force: :cascade do |t|
-    t.integer "car_id"
-    t.integer "travel_id"
-    t.index ["car_id"], name: "index_cars_travels_on_car_id", using: :btree
-    t.index ["travel_id"], name: "index_cars_travels_on_travel_id", using: :btree
+    t.index ["user_id"], name: "index_cars_on_user_id", using: :btree
   end
 
   create_table "conversations", force: :cascade do |t|
     t.string   "subject"
-    t.integer  "sender_id"
-    t.integer  "recipient_id"
-    t.boolean  "is_simple_conversation"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.index ["recipient_id"], name: "index_conversations_on_recipient_id", using: :btree
-    t.index ["sender_id"], name: "index_conversations_on_sender_id", using: :btree
+    t.integer  "travel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["travel_id"], name: "index_conversations_on_travel_id", using: :btree
   end
 
   create_table "conversations_users", id: false, force: :cascade do |t|
@@ -61,14 +53,6 @@ ActiveRecord::Schema.define(version: 20160613193106) do
     t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
-  create_table "roles", force: :cascade do |t|
-    t.string   "name"
-    t.string   "description"
-    t.boolean  "enabled"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "travels", force: :cascade do |t|
     t.float    "travel_time"
     t.date     "departure"
@@ -80,8 +64,10 @@ ActiveRecord::Schema.define(version: 20160613193106) do
     t.string   "city_destination"
     t.string   "province_destination"
     t.string   "country_destination"
+    t.integer  "car_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.index ["car_id"], name: "index_travels_on_car_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -109,6 +95,7 @@ ActiveRecord::Schema.define(version: 20160613193106) do
     t.string   "nickname"
     t.string   "image"
     t.string   "email"
+    t.integer  "role",                   default: 0,       null: false
     t.json     "tokens"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -117,18 +104,11 @@ ActiveRecord::Schema.define(version: 20160613193106) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
   end
 
-  create_table "users_cars", id: false, force: :cascade do |t|
+  create_table "users_travels", id: false, force: :cascade do |t|
     t.integer "user_id"
-    t.integer "car_id"
-    t.index ["car_id"], name: "index_users_cars_on_car_id", using: :btree
-    t.index ["user_id"], name: "index_users_cars_on_user_id", using: :btree
-  end
-
-  create_table "users_roles", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "role_id"
-    t.index ["role_id"], name: "index_users_roles_on_role_id", using: :btree
-    t.index ["user_id"], name: "index_users_roles_on_user_id", using: :btree
+    t.integer "travel_id"
+    t.index ["travel_id"], name: "index_users_travels_on_travel_id", using: :btree
+    t.index ["user_id"], name: "index_users_travels_on_user_id", using: :btree
   end
 
 end
