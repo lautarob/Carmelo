@@ -4,6 +4,7 @@
         @extend .navbar-default;
         margin: 0;
         background-color: transparent;
+        border: 0;
         line-height: 103px;
     }
 
@@ -25,7 +26,6 @@
         @extend .col-sm-8;
         @extend .col-lg-7;
         @extend .pull-right;
-        display: inline-block;
     }
 
     &__item {
@@ -40,7 +40,7 @@
 
         &:focus,
         &:hover {
-            color: #FFF;
+            color: $white-color;
             background-color: #199FE2;
             text-decoration: none;
             outline: none;
@@ -48,16 +48,16 @@
 
         &--login {
             padding: 10px 30px;
-            color: #7FBA00;
+            color: $limeade-color;
             background-color: transparent;
-            border: 1px solid #7FBA00;
+            border: 1px solid $limeade-color;
             border-radius: 15px;
             text-transform: uppercase;
 
             &:focus,
             &:hover {
-                color: #FFF;
-                background-color: #7FBA00;
+                color: $white-color;
+                background-color: $limeade-color;
             }
         }
     }
