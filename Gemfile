@@ -59,3 +59,6 @@ gem 'bootstrap-sass'
 
 # Automatically adds vendor prefixes
 gem 'autoprefixer-rails'
+
+# Helper to manage "active" state of a link
+gem 'active_link_to'

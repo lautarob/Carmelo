@@ -2,10 +2,10 @@
   <nav class="user-header__navbar">
     <ul class="user-header__nav">
       <li class="user-header__item">
-        <%= link_to "Buscar", root_path, class: "user-header__link" %>
+        <%= active_link_to "Buscar", user_search_path, class: "user-header__link" %>
       </li>
       <li class="user-header__item">
-        <%= link_to "Ofrecer", root_path, class: "user-header__link" %>
+        <%= active_link_to "Ofrecer", user_offer_path, class: "user-header__link" %>
       </li>
     </ul>
     </nav>
