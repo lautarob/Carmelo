@@ -3,11 +3,13 @@
 @import "bootstrap";
 
 // Base Styles
-@import "base/base";
+@import "base/reset";
 @import "base/colors";
+@import "base/inputs";
 
 // Sections Styles
 @import "styles/header";
 @import "styles/footer";
 @import "styles/static_pages/home";
 @import "styles/user_pages/header";
+@import "styles/user_pages/offer";
