@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   end
 
   root to: 'static_pages#home'
-  match '/user', to: 'user_pages#index', via: 'get'
+  match '/user/offer', to: 'user_pages#offer', via: 'get'
 end
