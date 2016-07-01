@@ -1,4 +1,4 @@
 class UserPagesController < ApplicationController
-    def index
+    def search
     end
 end
