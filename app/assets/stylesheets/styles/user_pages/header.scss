@@ -23,8 +23,9 @@
     }
 
     &__link {
-        padding: 12px 41px;
+        padding: 10px 37px;
         color: $white-color;
+        font-size: 17px;
         transition: all 0.5s ease-in-out;
 
         &.active,

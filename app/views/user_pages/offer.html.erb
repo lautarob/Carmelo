@@ -1,0 +1,50 @@
+<article class="user">
+    <%= render 'user_pages/header' %>
+
+    <section class="offer">
+        <form class="offer__form">
+            <fieldset class="offer__form-field">
+                <label class="offer__form-label offer__form-label--finder" for="offer-from-input">
+                    De dónde
+                </label>
+                <input type="" name="" id="offer-from-input" class="offer__form-input">
+            </fieldset>
+
+            <fieldset class="offer__form-field">
+                <label class="offer__form-label offer__form-label--finder" for="offer-to-input">
+                    A dónde
+                </label>
+                <input type="" name="" id="offer-to-input" class="offer__form-input">
+            </fieldset>
+
+            <fieldset class="offer__form-field">
+                <label class="offer__form-label offer__form-label--calendar" for="offer-when-input">    Cuándo
+                </label>
+                <input type="date" name="" id="offer-when-input" class="offer__form-input">
+            </fieldset>
+
+            <fieldset class="offer__form-field">
+                <label class="offer__form-label" for="offer-model-input">
+                    Modelo de auto
+                </label>
+                <input type="" name="" id="offer-model-input" class="offer__form-input">
+            </fieldset>
+
+            <fieldset class="offer__form-field">
+                <label class="offer__form-label" for="offer-seats-input">
+                    Cant. de Lugares
+                </label>
+                <input type="number" name="" id="offer-seats-input" class="offer__form-input" min="1" max="4">
+            </fieldset>
+
+            <fieldset class="offer__form-field">
+                <input
+                    type="submit"
+                    name=""
+                    value="Ofrecer"
+                    class="offer__form-input offer__form-input--submit"
+                >
+            </fieldset>
+        </form>
+    </section>
+</article>
