@@ -1,33 +1,35 @@
 <article class="user">
   <%= render 'user_pages/header' %>
 
-  <section class="search">
-    <form class="search__form">
-      <fieldset class="search__form-field">
-        <label class="search__form-label search__form-label--finder" for="search-from-input">
+  <section class="user__form-section">
+    <form class="user__form user__form--search">
+      <fieldset class="user__form-field">
+        <label class="user__form-label user__form-label--finder" for="user-from-input">
           De dónde
         </label>
-        <input type="" name="" id="search-from-input" class="search__form-input">
+        <input type="" name="" id="user-from-input" class="user__form-input">
       </fieldset >
-      <fieldset class="search__form-field">
-        <label class="search__form-label search__form-label--finder" for="search-to-input">
+      <fieldset class="user__form-field">
+        <label class="user__form-label user__form-label--finder" for="user-to-input">
           A dónde
         </label>
-        <input type="" name="" id="search-to-input" class="search__form-input">
+        <input type="" name="" id="user-to-input" class="user__form-input">
       </fieldset>
-      <fieldset class="search__form-field">
-        <label class="search__form-label search__form-label--calendar" for="search-when-input">
+      <fieldset class="user__form-field">
+        <label class="user__form-label user__form-label--calendar" for="user-when-input">
           Cuándo
         </label>
-        <input type="" name="" id="search-when-input" class="search__form-input">
+        <input type="" name="" id="user-when-input" class="user__form-input">
       </fieldset>
-      <fieldset class="search__form-field">
-        <input
-          type="submit"
-          name=""
-          value="Buscar"
-          class="search__form-input search__form-input--submit"
+      <fieldset class="user__form-field">
+        <button
+            type="submit"
+            class="user__form-submit"
         >
+          <span>
+            Buscar
+          </span>
+        </button>
       </fieldset>
     </form>
   </section>
