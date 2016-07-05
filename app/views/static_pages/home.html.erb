@@ -1,22 +1,18 @@
 <article class="home">
   <section class="home__main">
-    <div class="home__presentation">
-      <h1 class="home__title">Lorem Ipsum is simply dummy text</h1>
-      <p>
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-      </p>
+    <div class="home__logo">
+      <%= link_to image_tag("logo.png", alt: "Carmelo"), root_path %>
     </div>
     <div class="home__options">
-      <%= link_to user_offer_path, class: "home__option" do %>
+      <%= link_to user_offer_path, class: "home__option home__option--offer" do %>
         <span>Ofrezco Viaje</span>
       <% end %>
-      <%= link_to user_search_path, class: "home__option" do %>
+      <%= link_to user_search_path, class: "home__option home__option--search" do %>
         <span>Necesito Transporte</span>
       <% end %>
     </div>
   </section>
   <section class="home__footer">
-    <h4>Lorem Ipsum</h4>
     <p>
       Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto.
     </p>
