@@ -62,3 +62,6 @@ gem 'autoprefixer-rails'
 
 # Helper to manage "active" state of a link
 gem 'active_link_to'
+
+# Datepicker for Twitter Bootstrap
+gem 'bootstrap-datepicker-rails'
