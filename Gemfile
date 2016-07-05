@@ -65,3 +65,6 @@ gem 'active_link_to'
 
 # Datepicker for Twitter Bootstrap
 gem 'bootstrap-datepicker-rails'
+
+# jQuery UI for Rails
+gem 'jquery-ui-rails'

@@ -1,25 +1,35 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function() {
+  if (isSearchView() || isOfferView()) {
     intializeDatepicker();
+  }
 });
 
-function intializeDatepicker() {
-    $('.offer__form-datepicker').datepicker({
-        todayHighlight: true,
-        title: 'title'
-    }).on('show changeDate',  function(e) {
-        setDay(e);
-    });
+isSearchView = function() {
+  return $('.user_pages.search').length > 0;
 }
 
-function setDay(e) {
+isOfferView = function() {
+    return $('.user_pages.offer').length > 0;
+}
+
+setDay = function(evt) {
     var day;
 
-    if (e.date) {
-        day = e.date.getDate();
+    if (evt.date) {
+        day = evt.date.getDate();
     } else {
         day = new Date;
         day = day.getDate();
     }
 
     $('.datepicker-title').html(day);
+}
+
+intializeDatepicker = function() {
+    $('.user__form-datepicker').datepicker({
+        todayHighlight: true,
+        title: 'title'
+    }).on('show changeDate',  function(evt) {
+        setDay(evt);
+    });
 }

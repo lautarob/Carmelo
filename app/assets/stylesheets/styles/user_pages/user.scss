@@ -1,4 +1,4 @@
-.offer {
+.user {
     &__form {
         margin-top: 3px;
         padding: 33px 0;
@@ -10,6 +10,7 @@
 
         &-field {
             display: inline-block;
+            margin: 0 3px;
             text-align: left;
         }
 
@@ -19,6 +20,7 @@
             color: $emperor-color;
             font-size: 17px;
             font-weight: normal;
+            cursor: pointer;
 
             &--finder,
             &--calendar {
@@ -50,15 +52,23 @@
         }
 
         &-input {
-            &[type="date"] {
-                width: 170px;
-            }
-
             &[type="number"] {
                 text-align: center;
             }
         }
+
+        &-submit {
+            @extend .custom-button;
+        }
+
+        &--offer {
+            .user__form-input {
+                width: 162px;
+
+                &[type="date"] {
+                    width: 105px;
+                }
+            }
+        }
     }
 }
-
-
