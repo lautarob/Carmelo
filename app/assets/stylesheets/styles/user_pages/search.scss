@@ -1,0 +1,114 @@
+.user {
+    &__form {
+        &--search {
+            .user__form-input {
+                width: 250px;
+            }
+        }
+    }
+
+    &__results-section {
+        display: none;
+        padding: 20px 16px;
+    }
+
+    &__filter-header {
+        display: flex;
+        padding: 6px 14px;
+        border: 2px solid rgba($silver-color, 0.3);
+
+        &-left,
+        &-right {
+            @extend .col-sm-6;
+            padding: 0;
+        }
+
+        &-left {
+            line-height: 30px;
+
+            span {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+
+        &-right {
+            text-align: right;
+        }
+    }
+
+    &__filter-results-amount {
+        color: $picton-blue-color;
+    }
+
+    &__filter-button {
+        @extend .custom-button;
+        width: 207px;
+        height: 35px;
+
+        span {
+            margin-left: 20px;
+        }
+
+        &:before {
+            position: absolute;
+            top: 8px;
+            left: 10px;
+            width: 20px;
+            height: 20px;
+            background-image: image-url("search.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+            content: '';
+        }
+    }
+
+    &__filter-content {
+        display: flex;
+        padding: 10px 20px;
+        border: 2px solid $silver-color;
+    }
+
+    &__filter {
+        @extend .col-sm-5;
+
+        &:last-child {
+            @extend .col-sm-2;
+        }
+    }
+
+    &__filter-label {
+        display: block;
+        color: $gray-chateau-color;
+        font-size: 10px;
+    }
+
+    &__filter-slider-container {
+        padding: 12px 20px;
+        background-color: $gallery-color
+    }
+
+    &__filter-min,
+    &__filter-max {
+        color: $gray-chateau-color;
+        font-size: 10px;
+    }
+
+    &__filter-max {
+        position: absolute;
+        bottom: 0;
+        right: 15px;
+    }
+
+    &__filter-radio {
+        display: inline-block;
+        margin: 5px 20px 0 0;
+
+        .user__filter-label {
+            display: initial;
+            vertical-align: text-top;
+            cursor: pointer;
+        }
+    }
+}

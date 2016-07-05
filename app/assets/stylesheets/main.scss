@@ -5,7 +5,9 @@
 // Base Styles
 @import "base/reset";
 @import "base/colors";
+@import "base/buttons";
 @import "base/forms";
+@import "base/sliders";
 
 // Sections Styles
 @import "styles/header";
@@ -13,3 +15,4 @@
 @import "styles/static_pages/home";
 @import "styles/user_pages/header";
 @import "styles/user_pages/user";
+@import "styles/user_pages/search";
