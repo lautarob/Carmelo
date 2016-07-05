@@ -23,8 +23,9 @@
       </fieldset>
       <fieldset class="user__form-field">
         <button
-            type="submit"
-            class="user__form-submit"
+          type="submit"
+          data-behavior="search-travels"
+          class="user__form-submit"
         >
           <span>
             Buscar
@@ -32,5 +33,64 @@
         </button>
       </fieldset>
     </form>
+  </section>
+
+  <section class="user__results-section">
+    <section class="user__filter-section">
+      <header class="user__filter-header">
+        <div class="user__filter-header-left">
+          <span class="user__filter-results-amount">4</span>
+          <span>Servicios encontrados</span>
+        </div>
+        <div class="user__filter-header-right">
+          <button
+            class="user__filter-button"
+            data-toggle="collapse"
+            data-target="#filters"
+            aria-expanded="false"
+            aria-controls="filters"
+          >
+            <span>
+              Filtrar resultados
+            </span>
+          </button>
+        </div>
+      </header>
+      <div id="filters" class="collapse">
+        <form class="user__filter-content">
+          <fieldset class="user__filter">
+            <label class="user__filter-label">Edad</label>
+            <div class="user__filter-slider-container">
+              <div id="user__filter-age-slider"></div>
+            </div>
+            <span id="minAge" class="user__filter-min"></span>
+            <span id="maxAge" class="user__filter-max"></span>
+          </fieldset>
+          <fieldset class="user__filter">
+            <label class="user__filter-label">Modelo de Auto</label>
+            <div class="user__filter-slider-container">
+              <div id="user__filter-model-slider"></div>
+            </div>
+            <span id="minModel" class="user__filter-min"></span>
+            <span id="maxModel" class="user__filter-max"></span>
+          </fieldset>
+          <fieldset class="user__filter user__filter--gender">
+            <label class="user__filter-label">Sexo</label>
+            <div class="user__filter-radio">
+              <input type="radio" name="gender" value="female" id="female-radio">
+              <label class="user__filter-label" for="female-radio">Femenino</label>
+            </div>
+            <div class="user__filter-radio">
+              <input type="radio" name="gender" value="male" id="male-radio">
+              <label class="user__filter-label" for="male-radio">Masculino</label>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+
+    <section class="user__results">
+
+    </section>
   </section>
 </article>
