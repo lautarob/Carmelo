@@ -1,64 +1,62 @@
 .home {
-    text-align: center;
-
     &__main {
         padding: 100px 40px 80px;
-        color: $white-color;
-        background-color: $viking-color;
+        text-align: center;
     }
 
-    &__presentation {
-        margin-bottom: 60px;
+    &__logo {
+        margin: 0 auto;
+        width: 338px;
     }
 
-    &__title {
-        margin-bottom: 20px;
+    &__options {
+        margin-top: 16px;
     }
 
     &__option {
         position: relative;
-        display: inline-block;
-        margin: 0 10px;
+        display: block;
+        margin: 12px auto;
         padding: 10px 30px;
         width: 235px;
-        color: $white-color;
-        background: $atlantis-color;
         border-radius: 15px;
         text-transform: uppercase;
         transition: all 0.5s ease-in-out;
 
-        span {
-            position: relative;
-            z-index: 3;
-        }
-
         &:focus,
         &:hover {
-            color: $white-color;
             outline: none;
             text-decoration: none;
+        }
 
-            &:after {
-                opacity: 1;
+        &--offer {
+            color: $white-color;
+            background-color: $atlantis-color;
+
+            &:hover,
+            &:focus {
+                color: $white-color;
+                background-color: $limeade-color
             }
         }
 
-        &:after {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            background: linear-gradient(to bottom, $bright-green-color ,$harlequin-color);
-            border-radius: 15px;
-            transition: opacity 0.5s ease-in-out;
-            content: '';
+        &--search {
+            color: $limeade-color;
+            background-color: transparent;
+            border: 1px solid $limeade-color;
+
+            &:hover,
+            &:focus {
+                color: $limeade-color;
+                box-shadow: 0 0 2px 1px $limeade-color;
+            }
         }
     }
 
     &__footer {
         padding: 50px;
-        color: $viking-color;
+        color: $white-color;
+        background-color: $curious-blue;
+        text-align: center;
     }
 }
