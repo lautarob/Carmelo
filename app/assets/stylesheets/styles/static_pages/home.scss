@@ -10,7 +10,7 @@
     }
 
     &__options {
-        margin-top: 16px;
+        margin-top: 31px;
     }
 
     &__option {
@@ -51,12 +51,5 @@
                 box-shadow: 0 0 2px 1px $limeade-color;
             }
         }
-    }
-
-    &__footer {
-        padding: 50px;
-        color: $white-color;
-        background-color: $curious-blue;
-        text-align: center;
     }
 }
