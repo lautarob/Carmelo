@@ -62,3 +62,5 @@ gem 'autoprefixer-rails'
 
 # Helper to manage "active" state of a link
 gem 'active_link_to'
+
+gem 'jquery-ui-rails'
