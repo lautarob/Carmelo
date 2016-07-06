@@ -1,0 +1,59 @@
+<article class="register view">
+  <section class="register__form-section">
+    <div class="register__logo">
+      <%= link_to image_tag("logo.png", alt: "Carmelo"), root_path %>
+    </div>
+    <form class="register__form">
+      <fieldset class="register__form-field register__form-field--name">
+        <label class="register__form-label" for="register-name-input">
+          Nombre
+        </label>
+        <input type="text" name="name" placeholder="Nombre" id="register-name-input" required>
+        <input type="text" name="lastname" placeholder="Apellido" required>
+      </fieldset>
+      <fieldset class="register__form-field register__form-field--birthdate">
+        <label class="register__form-label" for="register-birthdate-input">
+          Fecha de Nacimiento
+        </label>
+        <input type="number" name="day" placeholder="Día" id="register-birthdate-input" required>
+        <input type="number" name="month" placeholder="Mes" required>
+        <input type="number" name="year" placeholder="Año" required>
+      </fieldset>
+      <fieldset class="register__form-field register__form-field--gender">
+        <label class="register__form-label">
+          Sexo
+        </label>
+        <div class="register__form-radio">
+          <label class="register__form-label" for="female-radio">Femenino</label>
+          <input type="radio" name="gender" value="female" id="female-radio" required>
+        </div>
+        <div class="register__form-radio">
+          <label class="register__form-label" for="male-radio">Masculino</label>
+          <input type="radio" name="gender" value="male" id="male-radio" required>
+        </div>
+      </fieldset>
+      <fieldset class="register__form-field register__form-field--location">
+        <input type="text" name="country" placeholder="Nacionalidad" required>
+        <input type="text" name="province" placeholder="Provincia" required>
+        <input type="text" name="city" placeholder="Ciudad" required>
+      </fieldset>
+      <fieldset class="register__form-field register__form-field--phone">
+        <label class="register__form-label" for="register-phone-input">
+          Teléfono Celular
+        </label>
+        <input type="tel" name="phone" id="register-phone-input" required>
+      </fieldset>
+      <fieldset class="register__form-field register__form-field--email">
+        <label class="register__form-label" for="register-email-input">
+          Dirección de Correo Electrónico Actual
+        </label>
+        <input type="email" name="email" id="register-email-input" required>
+      </fieldset>
+      <fieldset class="register__form-field">
+        <button type="submit" class="register__form-submit">
+          Registrarse
+        </button>
+      </fieldset>
+    </form>
+  </section>
+</article>
