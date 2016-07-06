@@ -25,7 +25,7 @@
 
         &:focus,
         &:hover {
-            outline: none;
+            outline: 0;
             text-decoration: none;
         }
 
@@ -36,7 +36,7 @@
             &:hover,
             &:focus {
                 color: $white-color;
-                background-color: $limeade-color
+                background-color: $limeade-color;
             }
         }
 
