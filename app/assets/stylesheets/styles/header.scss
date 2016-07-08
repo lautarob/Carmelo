@@ -117,6 +117,7 @@
 
 body {
     &.home,
+    &.login {
     &.register {
         .header__logo {
             display: none;
