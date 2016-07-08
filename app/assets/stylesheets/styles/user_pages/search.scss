@@ -111,4 +111,58 @@
             cursor: pointer;
         }
     }
+
+    &__results {
+        margin-top: 5px;
+        border: 2px solid $silver-color;
+    }
+
+    &__result {
+        padding: 20px;
+        border-bottom: 1px solid $silver-color;
+
+        &-profile {
+            display: inline-block;
+            vertical-align: text-bottom;
+
+            &--picture {
+                width: 50px;
+            }
+
+            &--info {
+                margin-left: 19px;
+            }
+        }
+
+        &-name,
+        &-age,
+        &-model {
+            display: block;
+        }
+
+        &-age,
+        &-model {
+            color: $gray-chateau-color;
+            font-size: 7px;
+        }
+
+        &-name {
+            color: $picton-blue-color;
+            font-size: 12px;
+
+            &:hover,
+            &:focus {
+                color: $picton-blue-color;
+                text-decoration: none;
+            }
+        }
+
+        &-model {
+            margin-top: 7px;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
 }

@@ -96,7 +96,34 @@
     </section>
 
     <section class="user__results">
-
+      <ul class="user__results-list">
+        <li class="user__result">
+          <div class="user__result-profile user__result-profile--picture">
+            <%= image_tag("profile.png", alt: "Profile picture") %>
+          </div>
+          <div class="user__result-profile user__result-profile--info">
+            <%= link_to "Nombre y Apellido del Conductor", root_path, class: "user__result-name" %>
+            <span class="user__result-age">28 años fecha de nacimiento 00/00/00</span>
+            <span class="user__result-model">
+              <b>Modelo de Auto: </b>
+              Ford Fiesta Kinetic 2015
+            </span>
+          </div>
+        </li>
+        <li class="user__result">
+          <div class="user__result-profile user__result-profile--picture">
+            <%= image_tag("profile.png", alt: "Profile picture") %>
+          </div>
+          <div class="user__result-profile user__result-profile--info">
+            <%= link_to "Nombre y Apellido del Conductor", root_path, class: "user__result-name" %>
+            <span class="user__result-age">28 años fecha de nacimiento 00/00/00</span>
+            <span class="user__result-model">
+              <b>Modelo de Auto: </b>
+              Ford Fiesta Kinetic 2015
+            </span>
+          </div>
+        </li>
+      </ul>
     </section>
   </section>
 </article>
