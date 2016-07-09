@@ -62,6 +62,7 @@
           </button>
         </div>
       </header>
+
       <div id="filters" class="collapse">
         <form class="user__filter-content">
           <fieldset class="user__filter">
@@ -80,7 +81,7 @@
             <span id="minModel" class="user__filter-min"></span>
             <span id="maxModel" class="user__filter-max"></span>
           </fieldset>
-          <fieldset class="user__filter user__filter--gender">
+          <fieldset class="user__filter">
             <label class="user__filter-label">Sexo</label>
             <div class="user__filter-radio">
               <input type="radio" name="gender" value="female" id="female-radio">
@@ -96,32 +97,64 @@
     </section>
 
     <section class="user__results">
+      <header class="user__results-header">
+        <ul>
+          <li class="user__results-header-column">
+            <span>Foto</span>
+          </li>
+          <li class="user__results-header-column">
+            <span>Nombre</span>
+          </li>
+          <li class="user__results-header-column">
+            <span>Edad</span>
+          </li>
+          <li class="user__results-header-column">
+            <span>Modelo de Auto</span>
+          </li>
+        </ul>
+      </header>
+
       <ul class="user__results-list">
         <li class="user__result">
-          <div class="user__result-profile user__result-profile--picture">
-            <%= image_tag("profile.png", alt: "Profile picture") %>
-          </div>
-          <div class="user__result-profile user__result-profile--info">
-            <%= link_to "Nombre y Apellido del Conductor", root_path, class: "user__result-name" %>
-            <span class="user__result-age">28 años fecha de nacimiento 00/00/00</span>
-            <span class="user__result-model">
-              <b>Modelo de Auto: </b>
-              Ford Fiesta Kinetic 2015
-            </span>
-          </div>
+          <ul class="user__result-info">
+            <li class="user__result-info-column">
+              <div class="user__result-profile-picture">
+                <%= image_tag("profile.png", alt: "Profile picture") %>
+              </div>
+            </li>
+            <li class="user__result-info-column">
+              <%= link_to "Nombre y Apellido del Conductor", root_path, class: "user__result-name" %>
+            </li>
+            <li class="user__result-info-column">
+              <span class="user__result-age">28 años</span>
+            </li>
+            <li class="user__result-info-column">
+              <span class="user__result-model">
+                Ford Fiesta Kinetic 2015
+              </span>
+            </li>
+          </ul>
         </li>
+
         <li class="user__result">
-          <div class="user__result-profile user__result-profile--picture">
-            <%= image_tag("profile.png", alt: "Profile picture") %>
-          </div>
-          <div class="user__result-profile user__result-profile--info">
-            <%= link_to "Nombre y Apellido del Conductor", root_path, class: "user__result-name" %>
-            <span class="user__result-age">28 años fecha de nacimiento 00/00/00</span>
-            <span class="user__result-model">
-              <b>Modelo de Auto: </b>
-              Ford Fiesta Kinetic 2015
-            </span>
-          </div>
+          <ul class="user__result-info">
+            <li class="user__result-info-column">
+              <div class="user__result-profile-picture">
+                <%= image_tag("profile.png", alt: "Profile picture") %>
+              </div>
+            </li>
+            <li class="user__result-info-column">
+              <%= link_to "Nombre y Apellido del Conductor", root_path, class: "user__result-name" %>
+            </li>
+            <li class="user__result-info-column">
+              <span class="user__result-age">28 años</span>
+            </li>
+            <li class="user__result-info-column">
+              <span class="user__result-model">
+                Ford Fiesta Kinetic 2015
+              </span>
+            </li>
+          </ul>
         </li>
       </ul>
     </section>
