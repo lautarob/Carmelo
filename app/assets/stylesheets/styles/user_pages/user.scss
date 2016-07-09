@@ -1,11 +1,15 @@
 .user {
+    &__form-section {
+        margin: 0 auto;
+        width: 83%;
+    }
+
     &__form {
         margin-top: 3px;
         padding: 33px 0;
         height: 147px;
         background-color: $mercury-color;
-        border-top: 1px solid $silver-chalice-color;
-        border-bottom: 1px solid $silver-chalice-color;
+        border: 1px solid $silver-chalice-color;
         text-align: center;
 
         &-field {
