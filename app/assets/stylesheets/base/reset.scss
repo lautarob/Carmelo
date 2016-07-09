@@ -1,3 +1,8 @@
+html,
+body {
+    height: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -26,4 +31,13 @@ img {
 
 a {
     color: $curious-blue;
+}
+
+.app {
+    min-height: 100%;
+    position: relative;
+
+    & > article {
+        padding-bottom: 60px;
+    }
 }

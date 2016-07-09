@@ -14,7 +14,7 @@
         padding: 0 20px;
 
         a {
-            outline: none;
+            outline: 0;
         }
     }
 
@@ -48,7 +48,7 @@
             color: $white-color;
             background-color: $curious-blue;
             text-decoration: none;
-            outline: none;
+            outline: 0;
         }
 
         &--login {
@@ -115,8 +115,12 @@
 
 //
 
-body.home {
-    .header__logo {
-        display: none;
+body {
+    &.home,
+    &.login {
+    &.register {
+        .header__logo {
+            display: none;
+        }
     }
 }
