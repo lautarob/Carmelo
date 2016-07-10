@@ -1,19 +1,19 @@
 class CreateTravels < ActiveRecord::Migration[5.0]
   def change
     create_table :travels do |t|
-      t.float :travel_time
       t.date :departure
-      t.integer :slots_remaining
+      t.decimal :latitude, :precision => 10, :scale => 6
+      t.decimal :longitude, :precision => 10, :scale => 6
+      t.integer :available_places
       t.string :description
-      t.string :city_origin
-      t.string :province_origin
-      t.string :country_origin
-      t.string :city_destination
-      t.string :province_destination
-      t.string :country_destination
+      t.string :origin
+      t.string :destination
       t.belongs_to :car, null: false
-
       t.timestamps
     end
+
+    add_index :travels, :origin
+    add_index :travels, :destination
+
   end
 end

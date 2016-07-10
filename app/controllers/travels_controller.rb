@@ -3,22 +3,33 @@ class TravelsController < ApplicationController
   def search
     @travels = Travel.where(
       departure: params[:date_from]..params[:date_to],
-      city_destination: params[:city_destination],
-      province_destination: params[:province_destination],
-      country_destination: params[:country_destination],
-      city_origin: params[:city_origin],
-      province_origin: params[:province_origin],
-      country_origin: params[:country_origin]
+      origin: params[:origin],
+      destination: params[:destination]
       )
-    render json: TravelSearchPresenter.new(@travels).to_json
+    @user_id =  1 #current_user.id
+    @signed_travels = User.find(@user_id).travels.pluck(:id) # Temporal
+    render json: TravelSearchPresenter.new(@travels,@signed_travels).to_json
+  end
+
+  def offered_travels
+    @user_id =  1 #current_user.id
+    @cars = User.find(@user_id ).cars # Temporal
+    @travels = []
+    @cars.each do |car|
+      @travels += car.travels
+    end
+    render json: TravelOfferedPresenter.new(@travels).to_json
   end
 
   def show
-    @travel = Travel.find(params[:id])
-    render json: TravelPresenter.new(@travel).to_json
+    @user_id =  1 #current_user.id
+    @travel = Travel.find(params[:id]) # Temporal
+    @signed_travels = User.find(@user_id).travels.pluck(:id)
+    render json: TravelShowPresenter.new(@travel,@signed_travels).to_json
   end
 
   def create
+    @user_id = 1 #current_user.id
     @travel = Travel.new(travel_params)
     @travel.save
     render json: @travel
@@ -40,16 +51,10 @@ private
   def travel_params
       params.require(:travel).permit(
       :departure,
-      :travel_time,
       :description,
-      :city_origin,
-      :country_origin,
-      :province_origin,
-      :city_destination,
-      :country_destination,
-      :province_destination,
-      :slots_remaining)
+      :origin,
+      :destination,
+      :available_places)
   end
-
   
 end
