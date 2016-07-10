@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'auth'
-
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  resources :users
   resources  :travels, :except => [:new,:edit] do
     collection do
       post 'search'

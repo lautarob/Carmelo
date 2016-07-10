@@ -34,8 +34,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 # Use Omniauth for user authentication
 gem 'omniauth'
-# Use Devise Token for user authentication
-gem 'devise_token_auth'
+# Use Omniauth Facebook for user authentication
+gem 'omniauth-facebook'
+# Use Koala to get user information
+gem "koala", "~> 2.2"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
