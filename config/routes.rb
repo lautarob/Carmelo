@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   resources :users
   resources  :travels, :except => [:new,:edit] do
     collection do
-      post 'search'
+      post 'search', to: 'travels#search'
+      post 'create', to: 'travels#create'
+      delete 'delete/:id', to: 'travels#destroy'
+      put 'update', to: 'travels#update'
+      get 'show/:id', to: 'travels#show'
     end
   end
 

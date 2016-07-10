@@ -1,11 +1,7 @@
 class TravelsController < ApplicationController
 
-  def index
-    @travels = Travel.all
-  end
-
   def search
-    @travel = Travel.where(
+    @travels = Travel.where(
       departure: params[:date_from]..params[:date_to],
       city_destination: params[:city_destination],
       province_destination: params[:province_destination],
@@ -14,12 +10,12 @@ class TravelsController < ApplicationController
       province_origin: params[:province_origin],
       country_origin: params[:country_origin]
       )
-    render json: @travel
+    render json: TravelSearchPresenter.new(@travels).to_json
   end
 
   def show
     @travel = Travel.find(params[:id])
-    render json: @travel
+    render json: TravelPresenter.new(@travel).to_json
   end
 
   def create
