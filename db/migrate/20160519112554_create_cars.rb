@@ -3,7 +3,7 @@ class CreateCars < ActiveRecord::Migration[5.0]
     create_table :cars do |t|
       t.integer :year
       t.string :model
-      t.integer :slots
+      t.integer :places
       t.string :register
       t.string :picture
       t.belongs_to :user, index: true, null: false

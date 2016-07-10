@@ -3,12 +3,8 @@ class TravelsController < ApplicationController
   def search
     @travels = Travel.where(
       departure: params[:date_from]..params[:date_to],
-      city_destination: params[:city_destination],
-      province_destination: params[:province_destination],
-      country_destination: params[:country_destination],
-      city_origin: params[:city_origin],
-      province_origin: params[:province_origin],
-      country_origin: params[:country_origin]
+      origin: params[:origin],
+      destination: params[:destination]
       )
     render json: TravelSearchPresenter.new(@travels).to_json
   end
@@ -40,16 +36,10 @@ private
   def travel_params
       params.require(:travel).permit(
       :departure,
-      :travel_time,
       :description,
-      :city_origin,
-      :country_origin,
-      :province_origin,
-      :city_destination,
-      :country_destination,
-      :province_destination,
-      :slots_remaining)
+      :origin,
+      :destination,
+      :available_places)
   end
-
   
 end

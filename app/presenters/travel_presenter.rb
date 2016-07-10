@@ -21,13 +21,13 @@ class TravelPresenter
     @travel_to_send["car_information"] = {}
     @travel_to_send["car_information"]["model"] = @travel.car.model
     @travel_to_send["car_information"]["year"] = @travel.car.year
-    @travel_to_send["car_information"]["total_slots"] = @travel.car.slots
-    @travel_to_send["car_information"]["free_slots"] = @travel.car.slots - @travel.users.count
+    @travel_to_send["car_information"]["places"] = @travel.car.places
 
     @travel_to_send["travel_information"] = {}
+    @travel_to_send["travel_information"]["id"] = @travel.id
     @travel_to_send["travel_information"]["description"] = @travel.description
     @travel_to_send["travel_information"]["departure"] = @travel.departure
-    @travel_to_send["travel_information"]["travel_time"] = @travel.travel_time
+    @travel_to_send["travel_information"]["available_places"] = @travel.available_places
 
     @travel_to_send["car_information"]["signed_users"] = []
 
