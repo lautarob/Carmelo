@@ -7,10 +7,6 @@ Rails.application.routes.draw do
     collection do
       post 'search', to: 'travels#search'
       get 'offered', to: 'travels#offered_travels'
-      post 'create', to: 'travels#create'
-      delete 'delete/:id', to: 'travels#destroy'
-      put 'update', to: 'travels#update'
-      get 'show/:id', to: 'travels#show'
     end
   end
 
