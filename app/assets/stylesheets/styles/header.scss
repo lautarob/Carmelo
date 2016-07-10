@@ -6,6 +6,7 @@
     width: 100%;
     background-color: $white-color;
     box-shadow: 0 0 15px $gray-chateau-color;
+    z-index: 1;
 
     &__navbar {
         @extend .navbar;
