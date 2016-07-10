@@ -1,7 +1,8 @@
-class TravelPresenter
+class TravelShowPresenter
 
-  def initialize(travel)
+  def initialize(travel,signed_travels)
     @travel = travel
+    @signed_travels = signed_travels
   end
 
   def as_json(*)
@@ -25,9 +26,13 @@ class TravelPresenter
 
     @travel_to_send["travel_information"] = {}
     @travel_to_send["travel_information"]["id"] = @travel.id
+    @travel_to_send["travel_information"]["origin"] = @travel.origin
+    @travel_to_send["travel_information"]["destination"] = @travel.destination
     @travel_to_send["travel_information"]["description"] = @travel.description
     @travel_to_send["travel_information"]["departure"] = @travel.departure
     @travel_to_send["travel_information"]["available_places"] = @travel.available_places
+    @travel_to_send["travel_information"]["signed"] = @signed_travels.include?(@travel.id)
+
 
     @travel_to_send["car_information"]["signed_users"] = []
 

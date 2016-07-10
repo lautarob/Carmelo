@@ -1,7 +1,8 @@
 class TravelSearchPresenter
 
-  def initialize(travels)
+  def initialize(travels,signed_travels)
     @travels = travels
+    @signed_travels = signed_travels
   end
 
   def as_json(*)
@@ -22,6 +23,7 @@ class TravelSearchPresenter
       @travel["travel_information"] = {}
       @travel["travel_information"]["id"] = travel.id
       @travel["travel_information"]["available_places"] = travel.available_places
+      @travel["travel_information"]["signed"] = @signed_travels.include?(travel.id)
 
       @travel["car_information"] = {}
       @travel["car_information"]["model"] = travel.car.model
