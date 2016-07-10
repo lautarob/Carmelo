@@ -70,9 +70,21 @@ ActiveRecord::Schema.define(version: 20160621031443) do
     t.index ["car_id"], name: "index_travels_on_car_id", using: :btree
   end
 
+  create_table "travels_users", id: false, force: :cascade do |t|
+    t.integer "user_id",   null: false
+    t.integer "travel_id", null: false
+    t.index ["travel_id"], name: "index_travels_users_on_travel_id", using: :btree
+    t.index ["user_id"], name: "index_travels_users_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.text     "first_name"
     t.text     "last_name"
+    t.text     "facebook_image_url"
+    t.text     "location"
+    t.text     "facebook_url"
+    t.text     "gender"
+    t.date     "birth_date"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
@@ -89,13 +101,6 @@ ActiveRecord::Schema.define(version: 20160621031443) do
     t.string   "uid"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  end
-
-  create_table "users_travels", id: false, force: :cascade do |t|
-    t.integer "user_id",   null: false
-    t.integer "travel_id", null: false
-    t.index ["travel_id"], name: "index_users_travels_on_travel_id", using: :btree
-    t.index ["user_id"], name: "index_users_travels_on_user_id", using: :btree
   end
 
 end

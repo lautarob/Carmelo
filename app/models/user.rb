@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_and_belongs_to_many :conversations
-  has_many :cars
+  has_many :car
+  has_and_belongs_to_many :travels
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -15,5 +17,4 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
     end
   end
-  
 end
