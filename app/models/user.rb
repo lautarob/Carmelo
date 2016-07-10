@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_and_belongs_to_many :conversations
-  has_many :car
+  has_many :cars
   has_and_belongs_to_many :travels
 
   # Include default devise modules. Others available are:
