@@ -26,7 +26,7 @@ setDay = function(evt) {
 }
 
 intializeDatepicker = function() {
-    $('.user__form-datepicker').datepicker({
+    $('#user-when-input').datepicker({
         todayHighlight: true,
         title: 'title'
     }).on('show changeDate',  function(evt) {

@@ -55,24 +55,50 @@
             }
         }
 
-        &-input {
-            &[type="number"] {
-                text-align: center;
-            }
-        }
-
         &-submit {
             @extend .custom-button;
         }
+    }
 
-        &--offer {
-            .user__form-input {
-                width: 162px;
+    &__results-section {
+        margin: 0 auto;
+        padding: 20px 0;
+        width: 83%;
+        white-space: nowrap;
+    }
 
-                &[type="date"] {
-                    width: 105px;
-                }
-            }
+    &__results-header-column,
+    &__result-info-column {
+        display: inline-block;
+    }
+
+    &__results {
+        margin-top: 5px;
+        color: $gray-chateau-color;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    &__results-list {
+        border: 2px solid $silver-color;
+        line-height: 60px;
+    }
+
+    &__results-header {
+        padding: 10px 0;
+        color: $emperor-color;
+        text-transform: uppercase;
+    }
+
+    &__result {
+        &:not(:last-child) {
+            border-bottom: 1px solid $silver-color;
+        }
+    }
+
+    &__result-info-column {
+        &:not(:last-child) {
+            border-right: 1px solid $silver-color;
         }
     }
 }

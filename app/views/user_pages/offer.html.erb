@@ -1,8 +1,8 @@
-<article class="user">
+<article class="user offer">
   <%= render 'user_pages/header' %>
 
   <section class="user__form-section">
-    <form class="user__form user__form--offer">
+    <form class="user__form">
       <fieldset class="user__form-field">
         <label class="user__form-label user__form-label--finder" for="user-from-input">
           De dónde
@@ -23,7 +23,7 @@
         </label>
         <input
           id="user-when-input"
-          class="user__form-datepicker"
+          class="user__form-input"
           type="text"
           data-provide="datepicker"
           readonly
@@ -55,5 +55,99 @@
         </button>
       </fieldset>
     </form>
+  </section>
+
+  <section class="user__results-section">
+    <section class="user__results">
+      <header class="user__results-header">
+        <ul>
+          <li class="user__results-header-column">
+            <span>Desde</span>
+          </li>
+          <li class="user__results-header-column">
+            <span>Hasta</span>
+          </li>
+          <li class="user__results-header-column">
+            <span>Día</span>
+          </li>
+          <li class="user__results-header-column">
+            <span>Modelo de Auto</span>
+          </li>
+          <li class="user__results-header-column">
+            <span>Acciones</span>
+          </li>
+        </ul>
+      </header>
+
+      <ul class="user__results-list">
+        <li class="user__result">
+          <ul class="user__result-info">
+            <li class="user__result-info-column">
+              <span>Tandil</span>
+            </li>
+            <li class="user__result-info-column">
+              <span>Buenos Aires</span>
+            </li>
+            <li class="user__result-info-column">
+              <span>18/05/2016</span>
+            </li>
+            <li class="user__result-info-column">
+              <span>Ford Fiesta Kinetic 2015</span>
+            </li>
+            <li class="user__result-info-column">
+              <i
+                class="user__result-action-button user__result-action-button--edit"
+                data-behavior="edit-travel"
+              >
+              </i>
+              <i
+                class="user__result-action-button user__result-action-button--subscribers"
+                data-behavior="travel-subscribers"
+              >
+              </i>
+              <i
+                class="user__result-action-button user__result-action-button--delete"
+                data-behavior="delete-travel"
+              >
+              </i>
+            </li>
+          </ul>
+        </li>
+
+        <li class="user__result">
+          <ul class="user__result-info">
+            <li class="user__result-info-column">
+              <span>Tandil</span>
+            </li>
+            <li class="user__result-info-column">
+              <span>La Plata</span>
+            </li>
+            <li class="user__result-info-column">
+              <span>20/07/2016</span>
+            </li>
+            <li class="user__result-info-column">
+              <span>Ford Fiesta Kinetic 2015</span>
+            </li>
+            <li class="user__result-info-column">
+              <i
+                class="user__result-action-button user__result-action-button--edit"
+                data-behavior="edit-travel"
+              >
+              </i>
+              <i
+                class="user__result-action-button user__result-action-button--subscribers"
+                data-behavior="travel-subscribers"
+              >
+              </i>
+              <i
+                class="user__result-action-button user__result-action-button--delete"
+                data-behavior="delete-travel"
+              >
+              </i>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
   </section>
 </article>
