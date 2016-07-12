@@ -4,8 +4,7 @@
       <%= link_to image_tag("logo.png", alt: "Carmelo"), root_path %>
     </div>
     <div class="login__option">
-      <%= link_to "Login con Facebook", root_path, class: "login__facebook" %>
+      <%= link_to "Login con Facebook", user_facebook_omniauth_authorize_path, class: "login__facebook" %>
     </div>
   </section>
-  <%= render 'static_pages/footer' %>
 </article>
