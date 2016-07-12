@@ -1,8 +1,8 @@
-<article class="user">
+<article class="user search">
   <%= render 'user_pages/header' %>
 
   <section class="user__form-section">
-    <form class="user__form user__form--search">
+    <form class="user__form">
       <fieldset class="user__form-field">
         <label class="user__form-label user__form-label--finder" for="user-from-input">
           De dónde
@@ -21,7 +21,7 @@
         </label>
         <input
           id="user-when-input"
-          class="user__form-datepicker"
+          class="user__form-input"
           type="text"
           data-provide="datepicker"
           readonly
@@ -126,12 +126,10 @@
               <%= link_to "Nombre y Apellido del Conductor", root_path, class: "user__result-name" %>
             </li>
             <li class="user__result-info-column">
-              <span class="user__result-age">28 años</span>
+              <span>28 años</span>
             </li>
             <li class="user__result-info-column">
-              <span class="user__result-model">
-                Ford Fiesta Kinetic 2015
-              </span>
+              <span>Ford Fiesta Kinetic 2015</span>
             </li>
           </ul>
         </li>
@@ -147,12 +145,10 @@
               <%= link_to "Nombre y Apellido del Conductor", root_path, class: "user__result-name" %>
             </li>
             <li class="user__result-info-column">
-              <span class="user__result-age">28 años</span>
+              <span>28 años</span>
             </li>
             <li class="user__result-info-column">
-              <span class="user__result-model">
-                Ford Fiesta Kinetic 2015
-              </span>
+              <span>Ford Fiesta Kinetic 2015</span>
             </li>
           </ul>
         </li>
