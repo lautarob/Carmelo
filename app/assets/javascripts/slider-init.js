@@ -1,11 +1,11 @@
 $(document).on('turbolinks:load', function() {
-  if ($('.user_pages.search').length > 0) {
+  if ($('.travels.search').length > 0) {
     initSliders();
   }
 });
 
 initAgeSlider = function() {
-  var ageSlider = $('#user__filter-age-slider');
+  var ageSlider = $('#travels__filter-age-slider');
   var minValue = 18;
   var maxValue = 70;
 
@@ -26,7 +26,7 @@ initAgeSlider = function() {
 }
 
 initModelSlider = function() {
-  var modelSlider = $('#user__filter-model-slider');
+  var modelSlider = $('#travels__filter-model-slider');
   var minValue = 1930;
   var maxValue = 2016;
 

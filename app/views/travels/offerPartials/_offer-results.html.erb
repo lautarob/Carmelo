@@ -1,0 +1,64 @@
+<section class="travels__results-section">
+  <%= paginate @travels %>
+
+  <header class="travels__results-header">
+    <ul>
+      <li class="travels__results-header-column">
+        <span>Desde</span>
+      </li>
+      <li class="travels__results-header-column">
+        <span>Hasta</span>
+      </li>
+      <li class="travels__results-header-column">
+        <span>Día</span>
+      </li>
+      <li class="travels__results-header-column">
+        <span>Modelo de Auto</span>
+      </li>
+      <li class="travels__results-header-column">
+        <span>Acciones</span>
+      </li>
+    </ul>
+  </header>
+
+  <ul class="travels__results-list">
+    <% @travels.each do |travel| %>
+      <li class="travels__result">
+        <ul class="travels__result-info">
+          <li class="travels__result-column">
+            <span><%= travel.origin %></span>
+          </li>
+          <li class="travels__result-column">
+            <span><%= travel.destination %></span>
+          </li>
+          <li class="travels__result-column">
+            <span><%= travel.departure %></span>
+          </li>
+          <li class="travels__result-column">
+            <span>
+              <%= travel.car.model %>
+              <%= travel.car.year %>
+            </span>
+          </li>
+          <li class="travels__result-column">
+            <i
+              class="travels__result-action-button travels__result-action-button--edit"
+              data-behavior="edit-travel"
+            >
+            </i>
+            <i
+              class="travels__result-action-button travels__result-action-button--subscribers"
+              data-behavior="travel-subscribers"
+            >
+            </i>
+            <i
+              class="travels__result-action-button travels__result-action-button--delete"
+              data-behavior="delete-travel"
+            >
+            </i>
+          </li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</section>

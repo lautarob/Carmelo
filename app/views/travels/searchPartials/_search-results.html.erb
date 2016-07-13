@@ -1,0 +1,46 @@
+<section class="travels__results">
+  <%= paginate @travels %>
+
+  <header class="travels__results-header">
+    <ul>
+      <li class="travels__results-header-column">
+        <span>Foto</span>
+      </li>
+      <li class="travels__results-header-column">
+        <span>Nombre</span>
+      </li>
+      <li class="travels__results-header-column">
+        <span>Edad</span>
+      </li>
+      <li class="travels__results-header-column">
+        <span>Modelo de Auto</span>
+      </li>
+    </ul>
+  </header>
+
+  <ul class="travels__results-list">
+    <% @travels.each do |travel| %>
+      <li class="travels__result">
+        <ul class="travels__result-info">
+          <li class="travels__result-column">
+            <div class="travels__result-profile-picture">
+              <%= image_tag("profile.png", alt: "Profile picture") %>
+            </div>
+          </li>
+          <li class="travels__result-column">
+            <%= link_to "Nombre y Apellido del Conductor", root_path, class: "travels__result-name" %>
+          </li>
+          <li class="travels__result-column">
+            <span>28 años</span>
+          </li>
+          <li class="travels__result-column">
+            <span>
+              <%= travel.car.model %>
+              <%= travel.car.year %>
+            </span>
+          </li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</section>
