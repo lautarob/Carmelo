@@ -1,4 +1,4 @@
-.user-header {
+.travels {
     &__navbar {
         @extend .navbar;
         @extend .navbar-default;
@@ -16,13 +16,13 @@
         @extend .pull-right;
     }
 
-	&__item {
+	&__nav-item {
         @extend .col-sm-5;
         padding: 0;
         text-align: center;
     }
 
-    &__link {
+    &__nav-link {
         padding: 10px 37px;
         color: $white-color;
         font-size: 17px;

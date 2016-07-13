@@ -1,0 +1,41 @@
+<section class="travels__form-section">
+  <form class="travels__form">
+    <fieldset class="travels__form-field">
+      <label class="travels__form-label travels__form-label--finder" for="travels-from-input">
+        De dónde
+      </label>
+      <input type="" name="travelSearch" id="travels-from-input" class="travels__form-input">
+    </fieldset>
+
+    <fieldset class="travels__form-field">
+      <label class="travels__form-label travels__form-label--finder" for="travels-to-input">
+        A dónde
+      </label>
+      <input type="" name="travelSearch" id="travels-to-input" class="travels__form-input">
+    </fieldset>
+    <fieldset class="travels__form-field">
+      <label class="travels__form-label travels__form-label--calendar" for="travels-when-input">
+        Cuándo
+      </label>
+      <input
+        id="travels-when-input"
+        class="travels__form-input"
+        type="text"
+        name="travelSearch"
+        data-provide="datepicker"
+        readonly
+      >
+    </fieldset>
+    <fieldset class="travels__form-field">
+      <button
+        type="submit"
+        data-behavior="search-travels"
+        class="travels__form-submit"
+      >
+        <span>
+          Buscar
+        </span>
+      </button>
+    </fieldset>
+  </form>
+</section>

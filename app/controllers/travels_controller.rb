@@ -6,19 +6,24 @@ class TravelsController < ApplicationController
       origin: params[:origin],
       destination: params[:destination]
       )
+    @travels = @travels.sort_by{|e| e[:origin]}
+    @travels = Kaminari.paginate_array(@travels).page(params[:page]).per(5)
+
     @user_id =  1 #current_user.id
     @signed_travels = User.find(@user_id).travels.pluck(:id) # Temporal
-    render json: TravelSearchPresenter.new(@travels,@signed_travels).to_json
+    # render json: TravelSearchPresenter.new(@travels,@signed_travels).to_json
   end
 
-  def offered_travels
+  def offered
     @user_id =  1 #current_user.id
-    @cars = User.find(@user_id ).cars # Temporal
+    @cars = User.find(@user_id).cars # Temporal
     @travels = []
     @cars.each do |car|
       @travels += car.travels
     end
-    render json: TravelOfferedPresenter.new(@travels).to_json
+    @travels = @travels.sort_by{|e| e[:origin]}
+    @travels = Kaminari.paginate_array(@travels).page(params[:page]).per(5)
+    # render json: TravelOfferedPresenter.new(@travels).to_json
   end
 
   def show
@@ -60,5 +65,5 @@ private
       :destination,
       :available_places)
   end
-  
+
 end

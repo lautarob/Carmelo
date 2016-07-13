@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  if ($('.user_pages.offer').length > 0) {
+  if ($('.travels.offer').length > 0) {
     bindButtonsActions();
   }
 });

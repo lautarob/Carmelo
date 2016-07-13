@@ -18,4 +18,4 @@
 //= require bootstrap
 //= require bootstrap-datepicker
 //= require_tree .
-//= require_tree ./user_pages
+//= require_tree ./travels

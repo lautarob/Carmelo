@@ -1,0 +1,38 @@
+.travels {
+    &__results-section {
+        margin: 5px auto;
+        padding: 20px 0;
+        width: 83%;
+        color: $gray-chateau-color;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    &__results-header-column,
+    &__result-column {
+        display: inline-block;
+    }
+
+    &__results-header {
+        padding: 10px 0;
+        color: $emperor-color;
+        text-transform: uppercase;
+    }
+
+    &__results-list {
+        border: 2px solid $silver-color;
+        line-height: 60px;
+    }
+
+    &__result {
+        &:not(:last-child) {
+            border-bottom: 1px solid $silver-color;
+        }
+    }
+
+    &__result-column {
+        &:not(:last-child) {
+            border-right: 1px solid $silver-color;
+        }
+    }
+}

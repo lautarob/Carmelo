@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function() {
-  if ($('.user_pages.search').length > 0) {
+  if ($('.travels.search').length > 0) {
     bindSearchAction();
   }
 });
@@ -14,7 +14,7 @@ bindSearchAction = function() {
 }
 
 showFiltersSection = function() {
-  var filterSection = $('.user__results-section');
+  var filterSection = $('.travels__results-section');
 
   filterSection.fadeIn();
 }

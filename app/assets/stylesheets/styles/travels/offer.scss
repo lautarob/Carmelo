@@ -1,5 +1,5 @@
-.user.offer {
-    .user {
+.travels.offer {
+    .travels {
         &__form-input {
             width: 162px;
 
@@ -9,8 +9,12 @@
             }
         }
 
+        &__results-section {
+            text-align: center;
+        }
+
         &__results-header-column,
-        &__result-info-column {
+        &__result-column {
             width: 20%;
         }
 
