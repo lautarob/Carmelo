@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     collection do
       # post 'search', to: 'travels#search'
       get 'search', to: 'travels#search'
-      get 'offered', to: 'travels#offered'
+      get 'offer', to: 'travels#offer'
     end
   end
 
