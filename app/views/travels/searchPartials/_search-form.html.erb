@@ -1,27 +1,21 @@
 <section class="travels__form-section">
-  <form class="travels__form">
+  <%= form_tag({controller: "travels", action: "search"}, {method: "get", class: "travels__form"}) do %>
     <fieldset class="travels__form-field">
-      <label class="travels__form-label travels__form-label--finder" for="travels-from-input">
-        De dónde
-      </label>
-      <input type="" name="travelSearch" id="travels-from-input" class="travels__form-input">
+      <%= label_tag :origin, "De dónde", class: "travels__form-label travels__form-label--finder" %>
+      <%= text_field_tag :origin, nil, class: 'travels__form-input', :required => true %>
     </fieldset>
 
     <fieldset class="travels__form-field">
-      <label class="travels__form-label travels__form-label--finder" for="travels-to-input">
-        A dónde
-      </label>
-      <input type="" name="travelSearch" id="travels-to-input" class="travels__form-input">
+      <%= label_tag :destination, "A dónde", class: "travels__form-label travels__form-label--finder" %>
+      <%= text_field_tag :destination, nil, class: 'travels__form-input', :required => true %>
     </fieldset>
     <fieldset class="travels__form-field">
-      <label class="travels__form-label travels__form-label--calendar" for="travels-when-input">
-        Cuándo
-      </label>
+      <%= label_tag :date_from, "Cuándo", class: "travels__form-label travels__form-label--calendar" %>
       <input
-        id="travels-when-input"
+        id="date_from"
         class="travels__form-input"
         type="text"
-        name="travelSearch"
+        name="date_from"
         data-provide="datepicker"
         readonly
       >
@@ -29,7 +23,6 @@
     <fieldset class="travels__form-field">
       <button
         type="submit"
-        data-behavior="search-travels"
         class="travels__form-submit"
       >
         <span>
@@ -37,5 +30,5 @@
         </span>
       </button>
     </fieldset>
-  </form>
+  <% end %>
 </section>

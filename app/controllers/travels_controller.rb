@@ -1,20 +1,25 @@
 class TravelsController < ApplicationController
-
   def search
-    @travels = Travel.where(
-      departure: params[:date_from]..params[:date_to],
-      origin: params[:origin],
-      destination: params[:destination]
+    if params
+      @travels = Travel.where(
+        origin: params[:origin],
+        destination: params[:destination]
       )
-    @travels = @travels.sort_by{|e| e[:origin]}
-    @travels = Kaminari.paginate_array(@travels).page(params[:page]).per(5)
 
-    @user_id =  1 #current_user.id
-    @signed_travels = User.find(@user_id).travels.pluck(:id) # Temporal
-    # render json: TravelSearchPresenter.new(@travels,@signed_travels).to_json
+      @travels = @travels.sort_by{|e| e[:origin]}
+      @travels = Kaminari.paginate_array(@travels).page(params[:page]).per(5)
+
+      @user_id = 1 #current_user.id
+      @user = User.find(@user_id)
+
+      calculate_age(@user.birth_date)
+      get_img_url(@user.facebook_image_url)
+
+      @signed_travels = User.find(@user_id).travels.pluck(:id) # Temporal
+    end
   end
 
-  def offered
+  def offer
     @user_id =  1 #current_user.id
     @cars = User.find(@user_id).cars # Temporal
     @travels = []
@@ -23,7 +28,6 @@ class TravelsController < ApplicationController
     end
     @travels = @travels.sort_by{|e| e[:origin]}
     @travels = Kaminari.paginate_array(@travels).page(params[:page]).per(5)
-    # render json: TravelOfferedPresenter.new(@travels).to_json
   end
 
   def show
@@ -64,6 +68,24 @@ private
       :origin,
       :destination,
       :available_places)
+  end
+
+  def calculate_age(birthdate)
+    today = Time.now
+
+    @age = today.year - birthdate.year
+    @age = @age - 1 if (
+      birthdate.month > today.month or
+      (birthdate.month >= today.month and birthdate.day > today.day)
+    )
+  end
+
+  def get_img_url(facebook_image_url)
+    if facebook_image_url
+      @profile_picture = facebook_image_url
+    else
+      @profile_picture = "avatar-placeholder.png"
+    end
   end
 
 end

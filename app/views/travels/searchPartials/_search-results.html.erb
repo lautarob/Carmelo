@@ -24,14 +24,15 @@
         <ul class="travels__result-info">
           <li class="travels__result-column">
             <div class="travels__result-profile-picture">
-              <%= image_tag("profile.png", alt: "Profile picture") %>
+              <%= image_tag "#{@profile_picture}", alt: "Profile picture" %>
             </div>
           </li>
           <li class="travels__result-column">
-            <%= link_to "Nombre y Apellido del Conductor", root_path, class: "travels__result-name" %>
+            <span><%= @user.first_name %></span>
+            <span><%= @user.last_name %></span>
           </li>
           <li class="travels__result-column">
-            <span>28 años</span>
+            <span><%= @age %></span>
           </li>
           <li class="travels__result-column">
             <span>
