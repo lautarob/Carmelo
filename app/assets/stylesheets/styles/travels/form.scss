@@ -58,5 +58,10 @@
 
     &__form-submit {
         @extend .custom-button;
+        @extend .custom-button--tertiary;
+        width: 168px;
+        height: 46px;
+        border-radius: 2px;
+        font-size: 17px;
     }
 }
