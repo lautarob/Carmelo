@@ -1,0 +1,56 @@
+<div
+  id="subscribers-modal"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Suscriptos</h3>
+      </div>
+      <div class="modal-body">
+        <ul class="modal__subscribers-list">
+          <li class="modal__subscriber">
+            <ul class="modal__subscriber-info">
+              <li class="modal__info-column">
+                <div class="modal__subscriber-profile-picture">
+                  <%= image_tag("profile.png", alt: "Profile picture") %>
+                </div>
+              </li>
+              <li class="modal__info-column">
+                <span>Nombre y apellido del suscripto</span>
+                <span>28 años fecha de nacimiento 00/00/00</span>
+              </li>
+            </ul>
+          </li>
+          <li class="modal__subscriber">
+            <ul class="modal__subscriber-info">
+              <li class="modal__info-column">
+                <div class="modal__subscriber-profile-picture">
+                  <%= image_tag("profile.png", alt: "Profile picture") %>
+                </div>
+              </li>
+              <li class="modal__info-column">
+                <span>Nombre y apellido del suscripto</span>
+                <span>28 años fecha de nacimiento 00/00/00</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button
+          class="modal__submit"
+          data-dismiss="modal"
+          aria-hidden="true"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

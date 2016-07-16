@@ -1,0 +1,120 @@
+.modal {
+    text-align: center;
+    padding: 0!important;
+    white-space: nowrap;
+
+    &::before {
+        display: inline-block;
+        margin-right: -4px;
+        height: 100%;
+        vertical-align: middle;
+        content: '';
+    }
+
+    &-dialog {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    &-content {
+        padding: 30px;
+        border-radius: 3px;
+        background-color: $vista-white-color;
+    }
+
+    &-header {
+        border-bottom: 0;
+        color: $royal-blue;
+        font-size: 22px;
+
+        .close {
+            display: none;
+        }
+    }
+
+    &-body {
+        color: $boulder-color;
+        font-size: 17px;
+    }
+
+    &-footer {
+        border-top: 0;
+        text-align: center;
+    }
+
+    &__submit {
+        @extend .custom-button;
+        @extend .custom-button--primary;
+        width: 296px;
+        height: 46px;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    &#edit-modal {
+        .modal {
+            &-header,
+            &-body,
+            &-footer {
+                padding: 0;
+            }
+
+            &-header {
+                margin-bottom: 12px;
+            }
+
+            &__form-field {
+                margin-bottom: 10px;
+            }
+
+            &__input {
+                width: 296px;
+                height: 24px !important;
+            }
+        }
+    }
+
+    &#subscribers-modal {
+        .modal {
+            &__subscribers-list {
+                margin: 0 auto;
+                width: 70%;
+                border: 2px solid $silver-color;
+            }
+
+            &__subscriber {
+                padding: 20px;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $silver-color;
+                }
+            }
+
+            &__info-column {
+                display: inline-block;
+                vertical-align: middle;
+
+                span {
+                    display: block;
+                    font-size: 12px;
+                }
+
+                &:first-child {
+                    width: 20%;
+                }
+
+                &:not(:first-child) {
+                    padding-left: 10px;
+                    width: 80%;
+                    text-align: left;
+                }
+            }
+
+            &__subscriber-profile-picture {
+                margin: 0 auto;
+                width: 50px;
+            }
+        }
+    }
+}

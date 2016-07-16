@@ -61,9 +61,8 @@
         }
 
         &--login {
-            color: $limeade-color;
-            background-color: transparent;
-            border: 1px solid $limeade-color;
+            @extend .custom-button;
+            @extend .custom-button--secondary;
             text-transform: uppercase;
 
             &:focus,

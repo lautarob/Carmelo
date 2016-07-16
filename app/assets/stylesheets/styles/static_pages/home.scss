@@ -14,42 +14,21 @@
     }
 
     &__option {
-        position: relative;
+        @extend .custom-button;
         display: block;
         margin: 12px auto;
         padding: 10px 30px;
         width: 235px;
+        height: 40px;
         border-radius: 15px;
         text-transform: uppercase;
-        transition: all 0.5s ease-in-out;
-
-        &:focus,
-        &:hover {
-            outline: 0;
-            text-decoration: none;
-        }
 
         &--offer {
-            color: $white-color;
-            background-color: $atlantis-color;
-
-            &:hover,
-            &:focus {
-                color: $white-color;
-                background-color: $limeade-color;
-            }
+            @extend .custom-button--primary;
         }
 
         &--search {
-            color: $limeade-color;
-            background-color: transparent;
-            border: 1px solid $limeade-color;
-
-            &:hover,
-            &:focus {
-                color: $limeade-color;
-                box-shadow: 0 0 2px 1px $limeade-color;
-            }
+            @extend .custom-button--secondary;
         }
     }
 }
