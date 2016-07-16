@@ -4,10 +4,6 @@
             width: 250px;
         }
 
-        &__results-section {
-            display: none;
-        }
-
         &__filter-header {
             padding: 6px 14px;
             border: 2px solid rgba($silver-color, 0.3);
@@ -114,7 +110,7 @@
         }
 
         &__results-header-column,
-        &__result-info-column {
+        &__result-column {
             width: 30%;
 
             &:first-child {
