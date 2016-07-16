@@ -1,0 +1,58 @@
+<div
+  id="edit-modal"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Editar</h3>
+      </div>
+      <div class="modal-body">
+        <%= form_tag({controller: "travels", action: "offered"}, {method: "post"}) do %>
+          <fieldset class="modal__form-field">
+            <%= text_field_tag :origin, nil, placeholder: 'Origen', class: "modal__input" %>
+          </fieldset>
+
+          <fieldset class="modal__form-field">
+            <%= text_field_tag :destination, nil, placeholder: 'Destino', class: "modal__input" %>
+          </fieldset>
+
+          <fieldset class="modal__form-field">
+            <%= text_field_tag :model, nil, placeholder: 'Modelo', class: "modal__input" %>
+          </fieldset>
+
+          <fieldset class="modal__form-field">
+            <input
+              id="date_from"
+              type="text"
+              class="modal__input"
+              placeholder="Fecha"
+              name="date_from"
+              data-provide="datepicker"
+              readonly
+            >
+          </fieldset>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <fieldset class="modal__form-field">
+            <button
+              type="submit"
+              class="modal__submit"
+              data-dismiss="modal"
+              aria-hidden="true"
+            >
+              <span>
+                Editar
+              </span>
+            </button>
+          </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
