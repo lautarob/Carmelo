@@ -13,7 +13,7 @@
         <h3 id="myModalLabel">Editar</h3>
       </div>
       <div class="modal-body">
-        <%= form_tag({controller: "travels", action: "offered"}, {method: "post"}) do %>
+        <%= form_tag({controller: "travels", action: "offer"}, {method: "post"}) do %>
           <fieldset class="modal__form-field">
             <%= text_field_tag :origin, nil, placeholder: 'Origen', class: "modal__input" %>
           </fieldset>
