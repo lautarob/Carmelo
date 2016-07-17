@@ -1,4 +1,4 @@
-class TravelOfferedPresenter
+class TravelOfferedPresenter < BasePresenter
 
   def initialize(travels)
     @travels = travels

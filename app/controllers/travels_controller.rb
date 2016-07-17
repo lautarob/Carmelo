@@ -12,8 +12,7 @@ class TravelsController < ApplicationController
       @travels = Kaminari.paginate_array(@travels).page(params[:page]).per(5)
       @signed_travels = User.find(@user_id).travels.pluck(:id)
 
-      @presenter = TravelSearchPresenter.new(@travels,@signed_travels).to_hash
-     
+      @presenter = TravelSearchPresenter.new(@travels,@signed_travels).to_hash     
     end
   end
 

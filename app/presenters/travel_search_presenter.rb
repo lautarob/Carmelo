@@ -1,4 +1,4 @@
-class TravelSearchPresenter
+class TravelSearchPresenter < BasePresenter
 
   def initialize(travels,signed_travels)
     @travels = travels
@@ -23,7 +23,7 @@ class TravelSearchPresenter
       @travel["user_information"]["facebook_image_url"] = "https://scontent-gru2-1.xx.fbcdn.net/v/t1.0-1/p160x160/11145132_10205360839360562_6349584530426372487_n.jpg?oh=8adaed225af46f0b20cbe49bb891f5ba&oe=57EEE236"
       @travel["user_information"]["gender"] = travel.car.user.gender
       @travel["user_information"]["birth_date"] = travel.car.user.birth_date
-      @travel["user_information"]["age"] = 20
+      @travel["user_information"]["age"] = age(travel.car.user.birth_date)
 
 
       @travel["travel_information"] = {}
