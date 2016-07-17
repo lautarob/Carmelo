@@ -1,5 +1,5 @@
 <section class="travels__results">
-  <%= paginate @travels %>
+  <%= paginate @presenter %>
 
   <header class="travels__results-header">
     <ul>
@@ -19,25 +19,25 @@
   </header>
 
   <ul class="travels__results-list">
-    <% @travels.each do |travel| %>
+    <% @presenter.each do |travel| %>
       <li class="travels__result">
         <ul class="travels__result-info">
           <li class="travels__result-column">
             <div class="travels__result-profile-picture">
-              <%= image_tag "#{@profile_picture}", alt: "Profile picture" %>
+              <%= image_tag "#{travel["user_information"]["facebook_image_url"]}", alt: "Profile picture" %>
             </div>
           </li>
           <li class="travels__result-column">
-            <span><%= @user.first_name %></span>
-            <span><%= @user.last_name %></span>
+            <span><%= travel["user_information"]["firstname"] %></span>
+            <span><%= travel["user_information"]["lastname"] %></span>
           </li>
           <li class="travels__result-column">
-            <span><%= @age %></span>
+            <span><%= travel["user_information"]["age"] %></span>
           </li>
           <li class="travels__result-column">
             <span>
-              <%= travel.car.model %>
-              <%= travel.car.year %>
+              <%= travel["car_information"]["model"] %>
+              <%= travel["car_information"]["year"] %>
             </span>
           </li>
         </ul>
