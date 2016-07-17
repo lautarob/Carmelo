@@ -1,10 +1,14 @@
-class TravelOfferedPresenter
+class TravelOfferedPresenter < BasePresenter
 
   def initialize(travels)
     @travels = travels
   end
 
   def as_json(*)
+    return to_hash
+  end
+
+  def to_hash
     @travels_to_send =  []
     @travels.each do |travel|
       @travel =  Hash.new

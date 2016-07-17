@@ -8,7 +8,8 @@ class TravelsController < ApplicationController
         destination: params[:destination]
       )
 
-      @amount = @travels.size
+      @user_id = 1 #current_user.id
+      @user = User.find(@user_id)
 
       @signed_travels = User.find(@user_id).travels.pluck(:id)
 
@@ -25,8 +26,13 @@ class TravelsController < ApplicationController
       @travels += car.travels
     end
 
+    @travels = @travels.sort_by{|e| e[sort_column]}
+
+    if sort_direction == "desc"
+      @travels = @travels.reverse
+    end
+
     @presenter =  TravelOfferedPresenter.new(@travels).to_hash
-    @presenter = @presenter.order(sort_column + " " + sort_direction)
     @presenter = Kaminari.paginate_array(@presenter).page(params[:page]).per(5)
   end
 
