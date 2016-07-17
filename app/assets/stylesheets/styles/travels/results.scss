@@ -8,15 +8,40 @@
         white-space: nowrap;
     }
 
+    &__results-header {
+        padding: 10px 0;
+        color: $emperor-color;
+        text-transform: uppercase;
+    }
+
     &__results-header-column,
     &__result-column {
         display: inline-block;
     }
 
-    &__results-header {
-        padding: 10px 0;
-        color: $emperor-color;
-        text-transform: uppercase;
+    &__results-header-link {
+        transition: all 0.5s ease-in-out;
+
+        &:hover,
+        &:focus {
+            outline: 0;
+            text-decoration: none;
+        }
+
+        .asc,
+        .desc {
+            left: 5px;
+        }
+
+        .asc {
+            @extend .glyphicon;
+            @extend .glyphicon-chevron-up;
+        }
+
+        .desc {
+            @extend .glyphicon;
+            @extend .glyphicon-chevron-down;
+        }
     }
 
     &__results-list {
