@@ -16,9 +16,11 @@ class TravelSearchPresenter
       @travel["user_information"]["firstname"] = travel.car.user.first_name
       @travel["user_information"]["lastname"] = travel.car.user.last_name
       @travel["user_information"]["facebook_url"] = travel.car.user.facebook_url
-      @travel["user_information"]["facebook_image_url"] = travel.car.user.facebook_image_url
+      @travel["user_information"]["facebook_image_url"] = "https://scontent-gru2-1.xx.fbcdn.net/v/t1.0-1/p160x160/11145132_10205360839360562_6349584530426372487_n.jpg?oh=8adaed225af46f0b20cbe49bb891f5ba&oe=57EEE236"
       @travel["user_information"]["gender"] = travel.car.user.gender
       @travel["user_information"]["birth_date"] = travel.car.user.birth_date
+      @travel["user_information"]["age"] = 20
+
 
       @travel["travel_information"] = {}
       @travel["travel_information"]["id"] = travel.id

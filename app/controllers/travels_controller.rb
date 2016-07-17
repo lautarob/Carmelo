@@ -75,22 +75,4 @@ private
       :available_places)
   end
 
-  def calculate_age(birthdate)
-    today = Time.now
-
-    @age = today.year - birthdate.year
-    @age = @age - 1 if (
-      birthdate.month > today.month or
-      (birthdate.month >= today.month and birthdate.day > today.day)
-    )
-  end
-
-  def get_img_url(facebook_image_url)
-    if facebook_image_url
-      @profile_picture = facebook_image_url
-    else
-      @profile_picture = "avatar-placeholder.png"
-    end
-  end
-
 end
