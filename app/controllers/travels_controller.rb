@@ -1,8 +1,8 @@
 class TravelsController < ApplicationController
   def search
-    debugger
     if params
       @travels = Travel.where(
+        departure: params[:departure],
         origin: params[:origin],
         destination: params[:destination]
       )
@@ -12,9 +12,6 @@ class TravelsController < ApplicationController
       @travels = @travels.sort_by{|e| e[:origin]}
       @travels = Kaminari.paginate_array(@travels).page(params[:page]).per(5)
       @signed_travels = User.find(@user_id).travels.pluck(:id)
-
-      calculate_age(@user.birth_date)
-      get_img_url(@user.facebook_image_url)
 
       render json: TravelSearchPresenter.new(@travels,@signed_travels).to_json
      
