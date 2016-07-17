@@ -6,7 +6,6 @@ class TravelSearchPresenter
   end
 
   def as_json(*)
-    debugger
     return to_hash
   end
 
