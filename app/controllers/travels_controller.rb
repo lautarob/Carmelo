@@ -2,7 +2,6 @@ class TravelsController < ApplicationController
   def search
     if params
       @travels = Travel.where(
-        departure: params[:departure],
         origin: params[:origin],
         destination: params[:destination]
       )
@@ -13,7 +12,7 @@ class TravelsController < ApplicationController
       @travels = Kaminari.paginate_array(@travels).page(params[:page]).per(5)
       @signed_travels = User.find(@user_id).travels.pluck(:id)
 
-      render json: TravelSearchPresenter.new(@travels,@signed_travels).to_json
+      @presenter = TravelSearchPresenter.new(@travels,@signed_travels).to_hash
      
     end
   end
@@ -28,7 +27,7 @@ class TravelsController < ApplicationController
     @travels = @travels.sort_by{|e| e[:origin]}
     @travels = Kaminari.paginate_array(@travels).page(params[:page]).per(5)
 
-    render json: TravelOfferedPresenter.new(@travels).to_json
+    @presenter =  TravelOfferedPresenter.new(@travels).to_hash
   end
 
   def show
@@ -36,7 +35,7 @@ class TravelsController < ApplicationController
     @travel = Travel.find(params[:id]) # Temporal
     @signed_travels = User.find(@user_id).travels.pluck(:id)
 
-    render json: TravelShowPresenter.new(@travel,@signed_travels).to_json
+    @presenter =  TravelShowPresenter.new(@travel,@signed_travels).to_hash
   end
 
   def create
@@ -44,7 +43,7 @@ class TravelsController < ApplicationController
     @travel = Travel.new(travel_params)
     @signed_travels = User.find(@user_id).travels.pluck(:id)
     @travel.save
-    render json: TravelShowPresenter.new(@travel,@signed_travels).to_json
+    @presenter = TravelShowPresenter.new(@travel,@signed_travels).to_hash
   end
 
   def update
@@ -53,7 +52,7 @@ class TravelsController < ApplicationController
     @travel.update_attributes(travel_params)
     @signed_travels = User.find(@user_id).travels.pluck(:id)
     @travel.save
-    render json: TravelShowPresenter.new(@travel,@signed_travels).to_json
+    @presenter = TravelShowPresenter.new(@travel,@signed_travels).to_hash
   end
 
   def destroy

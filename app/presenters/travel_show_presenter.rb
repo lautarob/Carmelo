@@ -6,7 +6,10 @@ class TravelShowPresenter
   end
 
   def as_json(*)
-    
+    return to_hash
+  end
+
+  def to_hash
     @travel_to_send =  Hash.new
     
     @travel_to_send["user_information"] = {}

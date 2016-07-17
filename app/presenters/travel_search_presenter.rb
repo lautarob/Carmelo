@@ -6,6 +6,11 @@ class TravelSearchPresenter
   end
 
   def as_json(*)
+    debugger
+    return to_hash
+  end
+
+  def to_hash
     @travels_to_send =  []
     @travels.each do |travel|
       @travel =  Hash.new
