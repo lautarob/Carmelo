@@ -8,6 +8,8 @@ class TravelsController < ApplicationController
         destination: params[:destination]
       )
 
+      @amount = @travels.size
+
       @user_id = 1 #current_user.id
       @user = User.find(@user_id)
 
