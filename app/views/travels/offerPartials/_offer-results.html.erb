@@ -1,16 +1,16 @@
 <section class="travels__results-section">
-  <%= paginate @travels %>
+  <%= paginate @presenter %>
 
   <header class="travels__results-header">
     <ul>
       <li class="travels__results-header-column">
-        <span>Desde</span>
+        <%= sortable "origin", "Desde" %>
       </li>
       <li class="travels__results-header-column">
-        <span>Hasta</span>
+        <%= sortable "destination", "Hasta" %>
       </li>
       <li class="travels__results-header-column">
-        <span>Día</span>
+        <%= sortable "departure", "Día" %>
       </li>
       <li class="travels__results-header-column">
         <span>Modelo de Auto</span>
@@ -22,22 +22,22 @@
   </header>
 
   <ul class="travels__results-list">
-    <% @travels.each do |travel| %>
+    <% @presenter.each do |travel| %>
       <li class="travels__result">
         <ul class="travels__result-info">
           <li class="travels__result-column">
-            <span><%= travel.origin %></span>
+            <span><%= travel["travel_information"]["origin"] %></span>
           </li>
           <li class="travels__result-column">
-            <span><%= travel.destination %></span>
+            <span><%= travel["travel_information"]["destination"] %></span>
           </li>
           <li class="travels__result-column">
-            <span><%= travel.departure %></span>
+            <span><%= travel["travel_information"]["departure"] %></span>
           </li>
           <li class="travels__result-column">
             <span>
-              <%= travel.car.model %>
-              <%= travel.car.year %>
+              <%= travel["car_information"]["model"] %>
+              <%= travel["car_information"]["year"] %>
             </span>
           </li>
           <li class="travels__result-column">
