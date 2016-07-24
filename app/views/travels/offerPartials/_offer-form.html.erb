@@ -1,52 +1,36 @@
 <section class="travels__form-section">
-  <form class="travels__form">
+  <%= form_tag({controller: "travels", action: "create"}, {method: "post", class: "travels__form"}) do %>
     <fieldset class="travels__form-field">
-      <label class="travels__form-label travels__form-label--finder" for="travels-from-input">
-        De dónde
-      </label>
-      <input type="" name="travelOffer" id="travels-from-input" class="travels__form-input">
+      <%= label_tag :origin, "De dónde", class: "travels__form-label travels__form-label--finder" %>
+      <%= text_field_tag :origin, nil, class: 'travels__form-input', :required => true %>
     </fieldset>
 
     <fieldset class="travels__form-field">
-      <label class="travels__form-label travels__form-label--finder" for="travels-to-input">
-        A dónde
-      </label>
-      <input type="" name="travelOffer" id="travels-to-input" class="travels__form-input">
+      <%= label_tag :destination, "A dónde", class: "travels__form-label travels__form-label--finder" %>
+      <%= text_field_tag :destination, nil, class: 'travels__form-input', :required => true %>
     </fieldset>
 
     <fieldset class="travels__form-field">
-      <label class="travels__form-label travels__form-label--calendar" for="travels-when-input">
-        Cuándo
-      </label>
+      <%= label_tag :departure, "Cuándo", class: "travels__form-label travels__form-label--calendar" %>
       <input
-        id="travels-when-input"
+        id="departure"
         class="travels__form-input"
         type="text"
-        name="travelOffer"
+        name="departure"
         data-provide="datepicker"
         readonly
+        required
       >
     </fieldset>
 
     <fieldset class="travels__form-field">
-      <label class="travels__form-label" for="travels-model-input">
-        Modelo de auto
-      </label>
-      <input type="" name="travelOffer" id="travels-model-input" class="travels__form-input">
+      <%= label_tag :car_model, "Modelo de auto", class: "travels__form-label" %>
+      <%= text_field_tag :car_model, nil, class: 'travels__form-input', :required => true %>
     </fieldset>
 
     <fieldset class="travels__form-field">
-      <label class="travels__form-label" for="travels-seats-input">
-        Lugares
-      </label>
-      <input
-        type="number"
-        name="travelOffer"
-        id="travels-seats-input"
-        class="travels__form-input"
-        min="1"
-        max="4"
-      >
+      <%= label_tag :places, "Lugares", class: "travels__form-label" %>
+      <%= number_field_tag :places, nil, within: 1...5, class: 'travels__form-input', :required => true %>
     </fieldset>
 
     <fieldset class="travels__form-field">
@@ -59,5 +43,5 @@
         </span>
       </button>
     </fieldset>
-  </form>
+  <% end %>
 </section>

@@ -10,14 +10,15 @@
       <%= text_field_tag :destination, nil, class: 'travels__form-input', :required => true %>
     </fieldset>
     <fieldset class="travels__form-field">
-      <%= label_tag :date_from, "Cuándo", class: "travels__form-label travels__form-label--calendar" %>
+      <%= label_tag :departure, "Cuándo", class: "travels__form-label travels__form-label--calendar" %>
       <input
-        id="date_from"
+        id="departure"
         class="travels__form-input"
         type="text"
-        name="date_from"
+        name="departure"
         data-provide="datepicker"
         readonly
+        required
       >
     </fieldset>
     <fieldset class="travels__form-field">
