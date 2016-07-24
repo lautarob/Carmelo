@@ -1,0 +1,74 @@
+<article class="register view">
+  <section class="register__form-section">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, class: 'register__form') do |f| %>
+      <%= devise_error_messages! %>
+      <fieldset class="register__form-field register__form-field--name">
+        <label class="register__form-label" for="register-name-input">
+          Nombre
+        </label>
+        <input type="text" name="name" placeholder="Nombre" id="register-name-input" required>
+        <input type="text" name="lastname" placeholder="Apellido" required>
+      </fieldset>
+      <fieldset class="register__form-field register__form-field--birthdate">
+        <label class="register__form-label" for="register-birthdate-input">
+          Fecha de Nacimiento
+        </label>
+        <input type="number" name="day" placeholder="Día" id="register-birthdate-input" required>
+        <input type="number" name="month" placeholder="Mes" required>
+        <input type="number" name="year" placeholder="Año" required>
+      </fieldset>
+      <fieldset class="register__form-field register__form-field--gender">
+        <label class="register__form-label">
+          Sexo
+        </label>
+        <div class="register__form-radio">
+          <label class="register__form-label" for="female-radio">Femenino</label>
+          <input type="radio" name="gender" value="female" id="female-radio" required>
+        </div>
+        <div class="register__form-radio">
+          <label class="register__form-label" for="male-radio">Masculino</label>
+          <input type="radio" name="gender" value="male" id="male-radio" required>
+        </div>
+      </fieldset>
+      <fieldset class="register__form-field register__form-field--location">
+        <input type="text" name="country" placeholder="Nacionalidad" required>
+        <input type="text" name="province" placeholder="Provincia" required>
+        <input type="text" name="city" placeholder="Ciudad" required>
+      </fieldset>
+      <fieldset class="register__form-field register__form-field--phone">
+        <label class="register__form-label" for="register-phone-input">
+          Teléfono Celular
+        </label>
+        <input type="tel" name="phone" id="register-phone-input" required>
+      </fieldset>
+      <fieldset class="register__form-field register__form-field--email">
+        <%= f.label :email, 'Dirección de Correo Electrónico Actual', class: 'regiter__form-label', for: 'register-email-input' %>
+        <%= f.email_field :email, name: 'email', id: 'register-email-input', required: 'true' %>
+      </fieldset>
+      <fieldset class="register__form-field">
+        <%= f.label :password %> <i>(Dejar en blanco si no se quiere cambiar)</i>
+        <%= f.password_field :password, autocomplete: "off" %>
+        <% if @minimum_password_length %>
+          <br />
+          <em><%= @minimum_password_length %> characters minimum</em>
+        <% end %>
+      </fieldset>
+      <fieldset class="register__form-field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </fieldset>
+      <fieldset class="register__form-field">
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password, autocomplete: "off" %>
+      </fieldset>
+      <fieldset class="register__form-field">
+        <button type="submit" class="register__form-submit">
+          <%= f.submit "Update" %>
+        </button>
+      </fieldset>
+    <% end %>
+  </section>
+  <h3>Cancel my account</h3>
+
+  <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+</article>

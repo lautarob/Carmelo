@@ -12,9 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui/slider
 //= require turbolinks
-//= require bootstrap-sprockets
-//= require bootstrap-datepicker
+//= require bootstrap
 //= require_tree .
-//= require_tree ./travels
