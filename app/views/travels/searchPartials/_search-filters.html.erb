@@ -1,0 +1,54 @@
+<section class="travels__filter-section">
+  <header class="travels__filter-header">
+    <div class="travels__filter-header-left">
+      <span class="travels__filter-results-amount">
+        <%= @amount %>
+      </span>
+      <span>Servicios encontrados</span>
+    </div>
+    <div class="travels__filter-header-right">
+      <button
+        class="travels__filter-button"
+        data-toggle="collapse"
+        data-target="#filters"
+        aria-expanded="false"
+        aria-controls="filters"
+      >
+        <span class="glyphicon glyphicon-filter"></span>
+        <span>Filtrar resultados</span>
+      </button>
+    </div>
+  </header>
+
+  <div id="filters" class="collapse">
+    <form class="travels__filter-form">
+      <fieldset class="travels__filter">
+        <label class="travels__filter-label">Edad</label>
+        <div class="travels__filter-slider-container">
+          <div id="travels__filter-age-slider"></div>
+        </div>
+        <span id="minAge" class="travels__filter-min"></span>
+        <span id="maxAge" class="travels__filter-max"></span>
+      </fieldset>
+      <fieldset class="travels__filter">
+        <label class="travels__filter-label">Modelo de Auto</label>
+        <div class="travels__filter-slider-container">
+          <div id="travels__filter-model-slider"></div>
+        </div>
+        <span id="minModel" class="travels__filter-min"></span>
+        <span id="maxModel" class="travels__filter-max"></span>
+      </fieldset>
+      <fieldset class="travels__filter">
+        <label class="travels__filter-label">Sexo</label>
+        <div class="travels__filter-checkbox">
+          <input type="checkbox" name="gender" value="female" id="female-checkbox">
+          <label class="travels__filter-label" for="female-checkbox">Femenino</label>
+        </div>
+        <div class="travels__filter-checkbox">
+          <input type="checkbox" name="gender" value="male" id="male-checkbox">
+          <label class="travels__filter-label" for="male-checkbox">Masculino</label>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

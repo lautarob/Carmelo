@@ -1,0 +1,34 @@
+<section class="travels__form-section">
+  <%= form_tag({controller: "travels", action: "search"}, {method: "get", class: "travels__form"}) do %>
+    <fieldset class="travels__form-field">
+      <%= label_tag :origin, "De dónde", class: "travels__form-label travels__form-label--finder" %>
+      <%= text_field_tag :origin, nil, class: 'travels__form-input', :required => true %>
+    </fieldset>
+
+    <fieldset class="travels__form-field">
+      <%= label_tag :destination, "A dónde", class: "travels__form-label travels__form-label--finder" %>
+      <%= text_field_tag :destination, nil, class: 'travels__form-input', :required => true %>
+    </fieldset>
+    <fieldset class="travels__form-field">
+      <%= label_tag :date_from, "Cuándo", class: "travels__form-label travels__form-label--calendar" %>
+      <input
+        id="date_from"
+        class="travels__form-input"
+        type="text"
+        name="date_from"
+        data-provide="datepicker"
+        readonly
+      >
+    </fieldset>
+    <fieldset class="travels__form-field">
+      <button
+        type="submit"
+        class="travels__form-submit"
+      >
+        <span>
+          Buscar
+        </span>
+      </button>
+    </fieldset>
+  <% end %>
+</section>

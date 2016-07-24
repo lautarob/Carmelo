@@ -1,0 +1,91 @@
+.datepicker {
+    padding: 0;
+    border: 0;
+
+    &-dropdown {
+        &:after {
+            border-bottom-color: $matisse-color;
+        }
+    }
+
+    table {
+        thead {
+            color: $white-color;
+            background-color: $cerulean-color;
+
+            tr {
+                th {
+                    border-radius: 0;
+
+                    &.dow {
+                        font-size: 9px;
+                    }
+
+                    &.datepicker-switch,
+                    &.prev,
+                    &.next {
+                        &:hover {
+                            background: initial;
+                        }
+                    }
+
+                    &.datepicker-switch {
+                        font-size: 18px;
+                        font-weight: normal;
+                    }
+                }
+
+                &:nth-child(2) {
+                    background-color: $matisse-color;
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                .day {
+                    color: $gray-color;
+                    border: 1px solid $white-color;
+                    border-radius: 0;
+                    background-color: $concrete-color;
+
+                    &.old,
+                    &.new {
+                        color: $white-color;
+                    }
+
+                    &.today,
+                    &.active {
+                        &:hover {
+                            border-color: initial;
+                        }
+                    }
+
+                    &.today {
+                        color: $white-color;
+                        background-color: $bay-of-many-color;
+                    }
+
+                    &.active {
+                        border-color: initial;
+                        background-color: $cerulean-color;
+                    }
+
+                    &:first-child {
+                        border-left: 0;
+                    }
+
+                    &:last-child {
+                        border-right: 0;
+                    }
+                }
+
+                &:last-child {
+                    .day {
+                        border-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

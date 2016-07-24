@@ -1,0 +1,60 @@
+// Reset styles
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+// App base styles
+
+html,
+body {
+    height: 100%;
+    font-weight: bold;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    color: $curious-blue;
+}
+
+body {
+    &.home,
+    &.login {
+        .app {
+            & > article {
+                padding-top: 0;
+            }
+        }
+    }
+
+    .app {
+        min-height: 100%;
+        position: relative;
+
+        & > article {
+            padding-top: 70px;
+            padding-bottom: 80px;
+        }
+    }
+}

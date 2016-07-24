@@ -1,0 +1,81 @@
+.travels.offer {
+    .travels {
+        &__form-input {
+            width: 162px;
+
+            &[type="number"] {
+                width: 70px;
+                text-align: center;
+            }
+        }
+
+        &__results-section {
+            text-align: center;
+        }
+
+        &__results-header-column,
+        &__result-column {
+            width: 20%;
+        }
+
+        &__result-action-button {
+            position: relative;
+            top: 8px;
+            width: 25px;
+            height: 25px;
+            margin: 0 10px;
+            border: 0;
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: pointer;
+
+            &--edit {
+                background-image: image-url("edit.png");
+
+                &:after {
+                    background-image: image-url("edit2.png");
+                }
+            }
+
+            &--subscribers {
+                background-image: image-url("subscribers.png");
+
+                &:after {
+                    background-image: image-url("subscribers2.png");
+                }
+            }
+
+            &--delete {
+                background-image: image-url("delete.png");
+
+                &:after {
+                    background-image: image-url("delete2.png");
+                }
+            }
+
+            &:after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 25px;
+                height: 25px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                content: '';
+            }
+
+            &:hover,
+            &:focus {
+                outline: 0;
+
+                &:after {
+                    opacity: 1;
+                    outline: 0;
+                }
+            }
+        }
+    }
+}

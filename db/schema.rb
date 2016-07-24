@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -19,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160621031443) do
   create_table "cars", force: :cascade do |t|
     t.integer  "year"
     t.string   "model"
-    t.integer  "slots"
+    t.integer  "places"
     t.string   "register"
     t.string   "picture"
     t.integer  "user_id",    null: false
@@ -54,25 +53,36 @@ ActiveRecord::Schema.define(version: 20160621031443) do
   end
 
   create_table "travels", force: :cascade do |t|
-    t.float    "travel_time"
     t.date     "departure"
-    t.integer  "slots_remaining"
+    t.decimal  "latitude",         precision: 10, scale: 6
+    t.decimal  "longitude",        precision: 10, scale: 6
+    t.integer  "available_places"
     t.string   "description"
-    t.string   "city_origin"
-    t.string   "province_origin"
-    t.string   "country_origin"
-    t.string   "city_destination"
-    t.string   "province_destination"
-    t.string   "country_destination"
-    t.integer  "car_id",               null: false
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.string   "origin"
+    t.string   "destination"
+    t.integer  "car_id",                                    null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.index ["car_id"], name: "index_travels_on_car_id", using: :btree
+    t.index ["destination"], name: "index_travels_on_destination", using: :btree
+    t.index ["origin"], name: "index_travels_on_origin", using: :btree
+  end
+
+  create_table "travels_users", id: false, force: :cascade do |t|
+    t.integer "user_id",   null: false
+    t.integer "travel_id", null: false
+    t.index ["travel_id"], name: "index_travels_users_on_travel_id", using: :btree
+    t.index ["user_id"], name: "index_travels_users_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
     t.text     "first_name"
     t.text     "last_name"
+    t.text     "facebook_image_url"
+    t.text     "location"
+    t.text     "facebook_url"
+    t.text     "gender"
+    t.date     "birth_date"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
@@ -89,13 +99,6 @@ ActiveRecord::Schema.define(version: 20160621031443) do
     t.string   "uid"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  end
-
-  create_table "users_travels", id: false, force: :cascade do |t|
-    t.integer "user_id",   null: false
-    t.integer "travel_id", null: false
-    t.index ["travel_id"], name: "index_users_travels_on_travel_id", using: :btree
-    t.index ["user_id"], name: "index_users_travels_on_user_id", using: :btree
   end
 
 end

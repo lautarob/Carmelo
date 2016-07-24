@@ -1,0 +1,47 @@
+<section class="travels__results">
+  <%= paginate @presenter %>
+
+  <header class="travels__results-header">
+    <ul>
+      <li class="travels__results-header-column">
+        <span>Foto</span>
+      </li>
+      <li class="travels__results-header-column">
+        <%= sortable "first", "Nombre" %>
+      </li>
+      <li class="travels__results-header-column">
+        <%= sortable "first", "Edad" %>
+      </li>
+      <li class="travels__results-header-column">
+        <span>Modelo de Auto</span>
+      </li>
+    </ul>
+  </header>
+
+  <ul class="travels__results-list">
+    <% @presenter.each do |travel| %>
+      <li class="travels__result">
+        <ul class="travels__result-info">
+          <li class="travels__result-column">
+            <div class="travels__result-profile-picture">
+              <%= image_tag "#{travel["user_information"]["facebook_image_url"]}", alt: "Profile picture" %>
+            </div>
+          </li>
+          <li class="travels__result-column">
+            <span><%= travel["user_information"]["firstname"] %></span>
+            <span><%= travel["user_information"]["lastname"] %></span>
+          </li>
+          <li class="travels__result-column">
+            <span><%= travel["user_information"]["age"] %></span>
+          </li>
+          <li class="travels__result-column">
+            <span>
+              <%= travel["car_information"]["model"] %>
+              <%= travel["car_information"]["year"] %>
+            </span>
+          </li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</section>

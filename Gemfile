@@ -61,3 +61,15 @@ gem 'bootstrap-sass'
 
 # Automatically adds vendor prefixes
 gem 'autoprefixer-rails'
+
+# Helper to manage "active" state of a link
+gem 'active_link_to'
+
+# Datepicker for Twitter Bootstrap
+gem 'bootstrap-datepicker-rails'
+
+# jQuery UI for Rails
+gem 'jquery-ui-rails'
+
+# Paginator for Rails 3 and 4
+gem 'kaminari'
