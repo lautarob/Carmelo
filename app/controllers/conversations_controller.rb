@@ -4,7 +4,7 @@ class ConversationsController < ApplicationController
   def create
     if params[:is_simple_conversation]
       if Conversation.between(params[:sender_id],params[:recipient_id]).present?
-        @conversation = Conversation.between(params[:sender_id],params[:recipient_id]).first
+        @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first
       else
         @conversation = Conversation.new
         @conversation.sender = User.find(params[:sender_id])
@@ -30,5 +30,5 @@ class ConversationsController < ApplicationController
     @messages = @conversation.messages
     render json: @messages
   end
-  
+
 end

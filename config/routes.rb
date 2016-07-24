@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :users
   resources :travels, :except => [:new,:edit] do
     collection do
-      # post 'search', to: 'travels#search'
       get 'search', to: 'travels#search'
       get 'offer', to: 'travels#offer'
     end
